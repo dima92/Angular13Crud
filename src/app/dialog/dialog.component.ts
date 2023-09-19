@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {FormGroup, FormBuilder, Validators} from "@angular/forms";
+import {UntypedFormGroup, UntypedFormBuilder, Validators} from "@angular/forms";
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog'
 
 import {ApiService} from "../services/api.service";
@@ -11,11 +11,11 @@ import {ApiService} from "../services/api.service";
 })
 export class DialogComponent implements OnInit {
   freshnessList = ["Brand New", "Second Hand", "Refurbished"]
-  productForm !: FormGroup;
+  productForm !: UntypedFormGroup;
   actionBtn: string = 'Save';
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private api: ApiService,
     @Inject(MAT_DIALOG_DATA) public editData: any,
     private dialogRef: MatDialogRef<DialogComponent>
