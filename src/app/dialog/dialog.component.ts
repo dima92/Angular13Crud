@@ -1,13 +1,23 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {UntypedFormGroup, UntypedFormBuilder, Validators} from "@angular/forms";
-import {MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA} from '@angular/material/legacy-dialog'
+import { UntypedFormGroup, UntypedFormBuilder, Validators, ReactiveFormsModule } from "@angular/forms";
+import { MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA, MatLegacyDialogModule } from '@angular/material/legacy-dialog'
 
 import {ApiService} from "../services/api.service";
+import { MatLegacyButtonModule } from '@angular/material/legacy-button';
+import { NgFor } from '@angular/common';
+import { MatLegacyRadioModule } from '@angular/material/legacy-radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatLegacyOptionModule } from '@angular/material/legacy-core';
+import { MatLegacySelectModule } from '@angular/material/legacy-select';
+import { MatLegacyInputModule } from '@angular/material/legacy-input';
+import { MatLegacyFormFieldModule } from '@angular/material/legacy-form-field';
 
 @Component({
-  selector: 'app-dialog',
-  templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.scss']
+    selector: 'app-dialog',
+    templateUrl: './dialog.component.html',
+    styleUrls: ['./dialog.component.scss'],
+    standalone: true,
+    imports: [MatLegacyDialogModule, ReactiveFormsModule, MatLegacyFormFieldModule, MatLegacyInputModule, MatLegacySelectModule, MatLegacyOptionModule, MatDatepickerModule, MatLegacyRadioModule, NgFor, MatLegacyButtonModule]
 })
 export class DialogComponent implements OnInit {
   freshnessList = ["Brand New", "Second Hand", "Refurbished"]

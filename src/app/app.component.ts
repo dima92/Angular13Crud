@@ -1,18 +1,26 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 
 import {MatLegacyDialog as MatDialog, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA} from '@angular/material/legacy-dialog';
-import {MatLegacyPaginator as MatPaginator} from '@angular/material/legacy-paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatLegacyTableDataSource as MatTableDataSource} from '@angular/material/legacy-table';
+import { MatLegacyPaginator as MatPaginator, MatLegacyPaginatorModule } from '@angular/material/legacy-paginator';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatLegacyTableDataSource as MatTableDataSource, MatLegacyTableModule } from '@angular/material/legacy-table';
 
 import {DialogComponent} from "./dialog/dialog.component";
 
 import {ApiService} from "./services/api.service";
+import { CurrencyPipe, DatePipe } from '@angular/common';
+import { MatLegacyInputModule } from '@angular/material/legacy-input';
+import { MatLegacyFormFieldModule } from '@angular/material/legacy-form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatLegacyButtonModule } from '@angular/material/legacy-button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: true,
+    imports: [MatToolbarModule, MatLegacyButtonModule, MatIconModule, MatLegacyFormFieldModule, MatLegacyInputModule, MatLegacyTableModule, MatSortModule, MatLegacyPaginatorModule, CurrencyPipe, DatePipe]
 })
 export class AppComponent implements OnInit {
   title = 'Angular13Crud';
